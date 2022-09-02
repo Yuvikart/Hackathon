@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="Transaction.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="Transaction.js"></script>
+  <title>Transaction</title>
+</head>
+<body>
+       <nav class="nav">
+      <img src="../Icons/Euroclear-logo.jpg" alt="logo" class="nav__logo" id="logo" />
+      <label class="Lable">EFI Ystävä</label>
+      <ul class="nav__links">
+         <li class="nav__item">
+        <form class="login">
+        <input
+          type="text"
+          placeholder="Search Transaction ID"
+          class="login__input login__input--user"
+        />
+        <a href="../AdvanceSearch/Advance.html" class="login__btn">GO!</a>
+         </form>
+        </li>
+        <!-- <li class="nav__item">
+          <a  style="width: auto; margin-right: 14rem;" class="nav__link nav__link--btn " href="../AdvanceSearch/Advance.html">Advance Search</a>
+         </li> -->
+      </ul>
+          <label class="Profile"> Yuavraj Mohan </br> mohan.yuvaraj@tcs.com </label>
+          <a  class="nav__link nav__link--btn " href="../Login/Login.html">Log out</a>
+    </nav>     
+  <main class="app">
+        <nav class="nav_tab">
+        <ul class="nav__links_tab">
+             <li class="nav__item_tab">
+                <a class="nav__links_tab nav__link_tab--btn " href="../Authorities/Authorities.html">Authorities</a>
+        </li>
+        <li class="nav__item_tab">
+          <a class="nav__links_tab nav__link_tab--btn " onclick="SearchTransaction()" href="#">Pending Transactions</a>
+        </li>
+        </nav>
+        <div class="movements">
+        <div class="movements__row">
+          <label id="reqID" class="movements__value" for="ID">REQ001 / Sub: Please provide the details of Durai</label>
+           <div  id="reqStatus" class="movements__type movements__type--Completed">Completed</div>
+        </div>
+        <div class="movements__row">
+          <label class="movements__value" for="ID">REQ002 / Sub: Please provide the details of Anil</label>
+           <div class="movements__type movements__type--Requested">Requested</div>
+        </div>
+         <div class="movements__row">
+          <label class="movements__value" for="ID">REQ003 / Sub: Please provide the details of Ram</label>
+           <div class="movements__type movements__type--Acknowledged">Acknowledged</div>
+        </div>
+         <div class="movements__row">
+          <label class="movements__value" for="ID">REQ004 / Sub: Please provide the details of Dinesh</label>
+           <div class="movements__type movements__type--Redirected">Redirected to Ops</div>
+        </div>
+       <div>
+
+       </div>
+      </div>
+      <div class="movements">
+         <div  class="flex_Details">
+         <label class="ReqID" for="ReqID" ><span style="color: rgb(116, 112, 112);"><b>REQ001</b></span></label>
+         </div>
+         <div class="movements__row">
+         <div  class="movements__value">
+          <label for="ID">Sub: Please provide the details of Durai </label>
+           <input  class="message"  name="message" type="text" placeholder="Message"  disabled/>
+         </div>
+          <label class="" for="ID">Sent By:</br>Yuvaraj</label>
+          <label class="" for="ID">Sent On:</br> 10.11.2021</label>
+          <button  class="btn btn--show-reply"  onclick=""><i class="fa fa-reply"></i></button>
+          <button  class="btn btn--show-forward"  onclick=""><i class="fa fa-mail-forward"></i></button>
+         </div>
+        <div class="movements__row">
+         <div  class="movements__value">
+          <label for="ID">Sub: Please provide the details of Anil </label>
+           <input  class="message"  name="message" type="text" placeholder="Message"  disabled/>
+         </div>
+          <label class="" for="ID">Sent By:</br>Ram</label>
+          <label class="" for="ID">Sent On:</br> 10.11.2021</label>
+          <button  class="btn btn--show-reply"  onclick=""><i class="fa fa-reply"></i></button>
+          <button  class="btn btn--show-forward"  onclick=""><i class="fa fa-mail-forward"></i></button>
+         </div>
+            <div class="movements__row">
+         <div  class="movements__value">
+          <label for="ID">Sub: Please provide the details of Lekshmi </label>
+           <input  class="message"  name="message" type="text" placeholder="Message"  disabled/>
+         </div>
+          <label class="" for="ID">Sent By:</br>Yuvaraj</label>
+          <label class="" for="ID">Sent On:</br> 10.11.2021</label>
+          <button  class="btn btn--show-reply"  onclick=""><i class="fa fa-reply"></i></button>
+          <button  class="btn btn--show-forward"  onclick=""><i class="fa fa-mail-forward"></i></button>
+         </div>
+        <div class="formFooter_Plus">
+           <button  class="btn btn--show-modal"  onclick="">New E-Mail</button>
+       </div>
+      </div>
+
+    </main>
+
+<div class="modal hidden">
+    <button class="btn--close-modal">&times;</button>
+    <h2 class="modal__header">Send New
+    <span class="highlight">E-Mail</span> 
+    </h2>
+    <form class="modal__form">
+      <label for="from">From</label>
+      <input  id="from" type="email">
+      <label for="">To</label>
+      <input  id="to" type="email" multiple>
+      <label for="cc">CC</label>
+      <input  id="cc" type="email" multiple>
+      <label for="sub">Subject</label>
+      <input  id="sub" type="text" />
+      <label for="mgs">Message</label>
+      <textarea  id='mgs' name="message" rows="6" cols="100">The cat was playing in the garden.</textarea>
+      <button class="btn submit">Send</button> 
+      <button class="btn clear">Cancel</button> 
+    </form>
+</div>
+
+<div class="Reply hidden">
+    <button class="btn--close-reply">&times;</button>
+    <h2 class="modal__header">
+    <span class="highlight">Reply</span> To
+    </h2>
+    <form class="modal__form">
+      <label for="">To</label>
+      <input  id="to" type="email" multiple>
+      <label for="cc">CC</label>
+      <input  id="cc" type="email" multiple>
+      <label for="sub">Subject</label>
+      <input  id="sub" type="text"/>
+      <label for="mgs">Message</label>
+      <textarea  id='mgs' name="message" rows="6" cols="100">The cat was playing in the garden.</textarea>
+      <button class="btn submit">Reply</button> 
+      <button class="btn clear">Cancel</button> 
+    </form>
+</div>
+
+<div class="forward hidden">
+    <button class="btn--close-forward">&times;</button>
+    <h2 class="modal__header">
+    <span class="highlight">Forward</span> To
+    </h2>
+    <form class="modal__form">
+      <label for="">To</label>
+      <input  id="to" type="email" multiple>
+      <label for="cc">CC</label>
+      <input  id="cc" type="email" multiple>
+      <label for="sub">Subject</label>
+      <input  id="sub" type="text"/>
+      <label for="mgs">Message</label>
+      <textarea  id='mgs' name="message" rows="6" cols="100">The cat was playing in the garden.</textarea>
+      <button class="btn submit">Forward</button> 
+      <button class="btn clear">Cancel</button> 
+    </form>
+</div>
+<div class="overlay hidden"></div>
+
+</body>
+</html>

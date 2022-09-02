@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="Authorities.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="Authorities.js"></script>
+  <title>Authorities</title>
+</head>
+<body>
+      <nav class="nav">
+      <img src="../Icons/Euroclear-logo.jpg" alt="logo" class="nav__logo" id="logo" />
+      <label class="Lable">EFI Ystävä</label>
+      <ul class="nav__links">
+         <li class="nav__item">
+        <form class="login">
+        <input
+          type="text"
+          placeholder="Search Transaction ID"
+          class="login__input login__input--user"
+        />
+        <a href="../AdvanceSearch/Advance.html" class="login__btn">GO!</a>
+         </form>
+        </li>
+        <!-- <li class="nav__item">
+          <a  style="width: auto; margin-right: 14rem;" class="nav__link nav__link--btn " href="../AdvanceSearch/Advance.html">Advance Search</a>
+         </li> -->
+      </ul>
+          <label class="Profile"> Yuvaraj Mohan </br> mohan.yuvaraj@tcs.com </label>
+          <a  class="nav__link nav__link--btn " href="../Login/Login.html">Log out</a>
+    </nav>   
+  <main class="app">
+      <nav class="nav_tab">
+        <ul class="nav__links_tab">
+             <li class="nav__item_tab">
+                <a class="nav__links_tab nav__link_tab--btn  " onload="SearchTransaction()" href="#">Authorities</a>
+        </li>
+        <li class="nav__item_tab">
+          <a class="nav__links_tab nav__link_tab--btn " href="../Transaction/Transaction.html">Pending Transactions</a>
+        </li>
+      </nav>
+      <div class="movements">
+        <div id="move2" class="movements__row">
+          <div class="movements__value NameAuth">Bank of Finland (bof.fi)</div>
+          <div class="movements__type movements__type--deposit">Enabled</div>
+        </div>
+        <div class="movements__row">
+          <div class="movements__value NameAuth">European Central Bank (ecb.eu)</div>
+           <div class="movements__type movements__type--withdrawal">
+            Disabled
+          </div>
+        </div>
+       <div class="formFooter_Plus">
+           <button  class="btn btn--show-modal "  onclick=""><i class="fa fa-plus"></i></button>
+       </div>
+      </div>
+  <div id="move2" class="movements">
+     <div id="Flex_Side" class = "Flex_Side">
+        <div class="flex_Details">
+           <input type="text" id="authority" class="details"   name="authority" placeholder="Bank of Finland" disabled>
+           <input type="text" id="domain" class="details" name="domain" placeholder="bof.fi" disabled>
+        <div class = "Flex_button">
+             <button class="A_btn">Authorize</button> 
+             <button class="R_btn">Reject</button> 
+             <button class="RE_btn">Remove</button> 
+        </div>
+      </div>
+      <div style="margin-left:25% ;" class="flex_Details">
+         <label  id ="RqID"for="RqID"><span style="color: rgb(116, 112, 112);">ID: </span>   <b>REQ0012345</b></label>
+         <label  id ="addedOn" for="addedOn"><span style="color: rgb(116, 112, 112);">Added On:</span> <b>09.02.2022 </b></label>
+         <label  id ="addedBy" for="addedBy"><span style="color: rgb(116, 112, 112);">Added By:</span> <b>Yuavraj Mohan</b></label>
+         <label  id ="authorizedOn" for="authorizedOn"><span style="color: rgb(116, 112, 112);">Authorized On:</span><b>10.02.2022</b></label>
+         <label  id ="authorizedBy" for="authorizedBy"><span style="color: rgb(116, 112, 112);">Authorized By: </span><b>Anil<b> </label>
+        <div  id ="status"class="movements__type_Flex movements__type_Flex--deposit">Enabled</div>
+      </div>
+      </div>
+       <br> 
+       <div id="rows" class="movements__row"> 
+        <span id="rowDomain" style="color: rgb(116, 112, 112);"> Sourav@euroclear.eu </span>
+        <div  class="flex_Details">
+         <label id="rowAddedOn" for="addedOn"><span style="color: rgb(116, 112, 112);">Added On:</span><b> 12.09.2021</b></label>
+         <label id="rowAddedBy" for="addedBy"><span style="color: rgb(116, 112, 112);">Added By:</span><b> Ram</b></label>
+         <label id="rowAuthorizedOn" for="authorizedOn"><span style="color: rgb(116, 112, 112);"> Authorized On:</span><b> 15.09.2022</b></label>
+         <label id="rowAuthorizedBy" for="authorizedBy"><span style="color: rgb(116, 112, 112);"> Authorized By:</span><b> Sourav</b></label>
+       </div>
+       <div  class="flex_Details">
+        <button  class="btn btn--show-check "  onclick=""><i class="fa fa-check"></i></button>
+        <button  class="btn btn--show-trash "  onclick=""><i class="fa fa-trash"></i></button>
+        <button  class="btn btn--show-close "  onclick=""><i class="fa fa-close"></i></button>
+       </div>
+       </div>
+       <div class="movements__row"> 
+        <span style="color: rgb(116, 112, 112);"> Anil@euroclear.eu </span>
+        <div  class="flex_Details">
+         <label for="addedOn"><span style="color: rgb(116, 112, 112);">Added On:</span><b> 12.09.2021</b></label>
+         <label for="addedBy"><span style="color: rgb(116, 112, 112);">Added By:</span><b> Ram</b></label>
+         <label for="authorizedOn"><span style="color: rgb(116, 112, 112);">Authorized On:</span><b> 15.09.2022</b></label>
+         <label for="authorizedBy"><span style="color: rgb(116, 112, 112);">Authorized By:</span><b> Anil</b></label>
+       </div>
+        <div  class="flex_Details">
+        <button  class="btn btn--check "  onclick=""><i class="fa fa-check"></i></button>
+        <button  class="btn btn--trash "  onclick=""><i class="fa fa-trash"></i></button>
+        <button  class="btn btn--close "  onclick=""><i class="fa fa-close"></i></button>
+       </div>
+       </div>
+       <div class="movements__row"> 
+        <span style="color: rgb(116, 112, 112);">Yuvaraj@euroclear.eu</span>
+        <div  class="flex_Details">
+         <label for="addedOn"><span style="color: rgb(116, 112, 112);">Added On:</span><b> 12.09.2021</b></label>
+         <label for="addedBy"><span style="color: rgb(116, 112, 112);">Added By:</span><b> Anil</b></label>
+         <label for="authorizedOn"><span style="color: rgb(116, 112, 112);">Authorized On:</span><b> 15.09.2022</b></label>
+         <label for="authorizedBy"><span style="color: rgb(116, 112, 112);">Authorized By:</span><b> Yuvaraj Mohan</b></label>
+       </div>
+        <div  class="flex_Details">
+        <button  class="btn btn--show-check "  onclick=""><i class="fa fa-check"></i></button>
+        <button  class="btn btn--show-trash "  onclick=""><i class="fa fa-trash"></i></button>
+        <button  class="btn btn--show-close "  onclick=""><i class="fa fa-close"></i></button>
+       </div>
+       </div>
+       
+       <div class="formFooter">
+           <input  class="AddEmail"  name="AddEmail" type="email" />
+           <button  class="btn_Add"  onclick="">Add</button>
+           <button  class="btn_Cancel"  onclick="">Cancel</button>
+       </div> 
+  </div>
+</main>
+
+  <div class="modal hidden">
+    <button class="btn--close-modal">&times;</button>
+    <h2 class="modal__header">
+     Register <span class="highlight"> Authority</span>
+    </h2>
+    <form class="modal__form">
+      <label>Name of Authority <span> *</span></label>
+      <input type="text" />
+      <label>Domain Name<span>*</span></label>
+      <input type="text" />
+      <label>Email ID</label>
+      <input type="email" multiple>
+      <button class="btn  submit">Submit</button> 
+      <button class="btn  clear">Clear</button> 
+    </form>
+  </div>
+<div class="overlay hidden"></div>
+</body>
+</html>

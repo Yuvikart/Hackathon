@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="Login.css" />
+  <script defer src="Login.js"></script>
+  <title>Login</title>
+</head>
+<body>
+ <div class="wrapper fadeInDown">
+  <div id="formContent">
+
+  <!-- Tabs Titles -->
+    <div class="fadeIn first">
+      <!-- <h2 class="active"> Sign In </h2> -->
+      <h2  id ="heading" class="inactive underlineHover">Sign In</h2>
+      <span class='Error hidden'>Invalid User Name & Password</span>
+    </div>
+    
+    <!-- Login Form -->
+   <form>
+      <input type="text" id="user"  class="login__input_user fadeIn second"    name="user" placeholder="User Name" required>
+      <input type="password" id="password"class="login__input_password fadeIn third" " name="password" placeholder="Password" required>
+      <input type="submit" class="login__btn fadeIn fourth"  value="Log In">
+    </form>
+ 
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+   
+  </div>
+</div>
+
+</body>
+
+</html>
